@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rubros index{% endblock %}
+
+{% block body %}
+    <h1>Rubros index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Rubro</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rubro in rubros %}
+            <tr>
+                <td>{{ rubro.id }}</td>
+                <td>{{ rubro.Rubro }}</td>
+                <td>
+                    <a href="{{ path('rubros_show', {'id': rubro.id}) }}">show</a>
+                    <a href="{{ path('rubros_edit', {'id': rubro.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('rubros_new') }}">Create new</a>
+{% endblock %}

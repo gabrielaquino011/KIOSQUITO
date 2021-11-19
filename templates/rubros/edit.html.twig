@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Rubros{% endblock %}
+
+{% block body %}
+    <h1>Edit Rubros</h1>
+
+    {{ include('rubros/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('rubros_index') }}">back to list</a>
+
+    {{ include('rubros/_delete_form.html.twig') }}
+{% endblock %}
